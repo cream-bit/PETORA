@@ -2263,7 +2263,28 @@ async function buyShopItem(itemId) {
 
 
         await transaction.wait();
+        // ================= SAVE TRANSACTION HISTORY =================
 
+        const history =
+            JSON.parse(
+                localStorage.getItem("petoraTxHistory") || "[]"
+            );
+
+        history.unshift({
+            itemId: itemId,
+            itemName: item.name,
+            itemIcon: item.icon,
+            price: item.price,
+            hash: transaction.hash,
+            timestamp: Date.now()
+        });
+
+        localStorage.setItem(
+            "petoraTxHistory",
+            JSON.stringify(history)
+        );
+
+        updateTransactionHistory();
 
         /*
          * ซื้อสำเร็จ
@@ -2435,9 +2456,8 @@ function showPage(pageId) {
     if (pageId === "shop") {
 
         updateShopInventory();
-
+        updateTransactionHistory();
     }
-
 
     if (pageId === "pet") {
 
@@ -2907,3 +2927,89 @@ function petClick(event) {
 
 window.petClick =
     petClick;
+// ======================================================
+// TRANSACTION HISTORY
+// ======================================================
+
+function updateTransactionHistory() {
+
+    const container =
+        document.getElementById(
+            "transactionHistoryList"
+        );
+
+    if (!container) {
+        return;
+    }
+
+    const history =
+        JSON.parse(
+            localStorage.getItem(
+                "petoraTxHistory"
+            ) || "[]"
+        );
+
+    if (history.length === 0) {
+
+        container.innerHTML = `
+            <p class="no-history">
+                ยังไม่มีประวัติการซื้อ
+            </p>
+        `;
+
+        return;
+    }
+
+    container.innerHTML = "";
+
+    history.forEach(function (tx) {
+
+        const date =
+            new Date(tx.timestamp);
+
+        const dateText =
+            date.toLocaleString("th-TH");
+
+        const item =
+            document.createElement("div");
+
+        item.className =
+            "transaction-item";
+
+        item.innerHTML = `
+
+            <div class="transaction-icon">
+                ${tx.itemIcon}
+            </div>
+
+            <div class="transaction-info">
+
+                <strong>
+                    ${tx.itemName}
+                </strong>
+
+                <small>
+                    ${dateText}
+                </small>
+
+            </div>
+
+            <div class="transaction-price">
+                - ${tx.price} tBNB
+            </div>
+
+            <a
+                class="transaction-link"
+                href="https://testnet.bscscan.com/tx/${tx.hash}"
+                target="_blank"
+            >
+                View TX ↗
+            </a>
+
+        `;
+
+        container.appendChild(item);
+
+    });
+
+}
