@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>PETORA - My Pet</title>
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="game.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <span>🐱</span>
+
+            <strong>
+                PET🐾RA
+            </strong>
+
+        </div>
+
+
+        <div class="wallet-mini">
+
+            <span>🦊</span>
+
+            <span id="walletAddress">
+                Loading...
+            </span>
+
+        </div>
+
+
+        <nav>
+
+            <button class="menu-item active"
+                onclick="showPage('home')">
+
+                🏠
+                <span>Home</span>
+
+            </button>
+
+
+            <button class="menu-item"
+                onclick="showPage('pet')">
+
+                🐾
+                <span>My Pet</span>
+
+            </button>
+
+
+            <button class="menu-item"
+                onclick="showPage('shop')">
+
+                🛒
+                <span>Pet Shop</span>
+
+            </button>
+
+
+            <button class="menu-item"
+                onclick="showPage('inventory')">
+
+                🎒
+                <span>Inventory</span>
+
+            </button>
+
+
+            <button class="menu-item"
+                onclick="showPage('wallet')">
+
+                👛
+                <span>Wallet</span>
+
+            </button>
+
+
+            <button class="menu-item"
+                onclick="showPage('ranking')">
+
+                🏆
+                <span>Ranking</span>
+
+            </button>
+
+        </nav>
+
+
+        <button class="back-button"
+            onclick="goBack()">
+
+            ← Back to Landing
+
+        </button>
+
+    </aside>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="main-content">
+
+
+        <!-- ================= HOME ================= -->
+
+        <section id="home"
+            class="page active-page">
+
+            <div class="topbar">
+
+                <div>
+
+                    <p class="small-title">
+                        Welcome to PETORA
+                    </p>
+
+                    <h1>
+                        My Digital Pet
+                    </h1>
+
+                </div>
+
+
+                <div class="top-pet">
+
+                    <span id="topPetIcon">
+                        🐱
+                    </span>
+
+                    <span id="topPetName">
+                        Pet
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="pet-main-card">
+
+
+                <div class="pet-display">
+
+                    <div class="pet-image-box">
+
+                        <div class="pet-interactive" onclick="petClick(event)">
+                            <img
+                                id="petImage"
+                                src="cat.png"
+                                alt="Pet">
+                        </div>
+
+                        <div id="petEmoji"
+                            class="pet-emoji">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="pet-info">
+
+                    <p id="petType">
+                        Your Digital Pet
+                    </p>
+
+
+                    <h2 id="petName">
+                        Mochi
+                    </h2>
+
+
+                    <div class="level-row">
+
+                        <span>
+                            Level
+                        </span>
+
+                        <strong class="level-number">
+                            1
+                        </strong>
+
+                    </div>
+
+
+                    <div class="exp-header">
+
+                        <span>
+                            Experience
+                        </span>
+
+                        <span class="exp-text">
+                            0/100 EXP
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-bar">
+
+                        <div class="exp-fill"></div>
+
+                    </div>
+
+
+                    <div class="action-buttons">
+
+                        <button
+                            class="action-button feed">
+
+                            🍖 Feed
+
+                        </button>
+
+
+                        <button
+                            class="action-button play">
+
+                            🎮 Play
+
+                        </button>
+
+
+                        <button
+                            class="action-button rest">
+
+                            😴 Rest
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- STATUS -->
+
+            <div class="status-grid">
+
+
+                <div class="status-card">
+
+                    <div class="status-top">
+
+                        <span>
+                            ❤️ Happiness
+                        </span>
+
+                        <strong class="happiness-value">
+                            0%
+                        </strong>
+
+                    </div>
+
+                    <div class="progress-bar pink">
+
+                        <div class="happiness-fill"></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="status-card">
+
+                    <div class="status-top">
+
+                        <span>
+                            ⚡ Energy
+                        </span>
+
+                        <strong class="energy-value">
+                            100%
+                        </strong>
+
+                    </div>
+
+                    <div class="progress-bar purple">
+
+                        <div class="energy-fill"></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="status-card">
+
+                    <div class="status-top">
+
+                        <span>
+                            🍖 Hunger
+                        </span>
+
+                        <strong class="hunger-value">
+                            0%
+                        </strong>
+
+                    </div>
+
+                    <div class="progress-bar orange">
+
+                        <div class="hunger-fill"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <h2 class="section-title">
+                Quick Access
+            </h2>
+
+
+            <div class="quick-grid">
+
+
+                <button
+                    onclick="showPage('shop')"
+                    class="quick-card">
+
+                    <span>🛒</span>
+
+                    <strong>
+                        Pet Shop
+                    </strong>
+
+                    <small>
+                        Buy food
+                    </small>
+
+                </button>
+
+
+                <button
+                    onclick="showPage('inventory')"
+                    class="quick-card">
+
+                    <span>🎒</span>
+
+                    <strong>
+                        Inventory
+                    </strong>
+
+                    <small>
+                        Your items
+                    </small>
+
+                </button>
+
+
+                <button
+                    onclick="showPage('wallet')"
+                    class="quick-card">
+
+                    <span>👛</span>
+
+                    <strong>
+                        Wallet
+                    </strong>
+
+                    <small>
+                        Blockchain
+                    </small>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= MY PET ================= -->
+
+        <section id="pet"
+            class="page">
+
+            <h1>
+                🐾 My Pet
+            </h1>
+
+
+            <div class="my-pet-layout">
+
+
+                <div class="my-pet-image-card">
+
+                    <div class="my-pet-image-box">
+
+                        <img
+                            id="petPageImage"
+                            src="cat.png"
+                            alt="Pet">
+
+                    </div>
+
+
+                    <h2 id="petPageName">
+                        Mochi
+                    </h2>
+
+
+                    <p id="petPageType">
+                        Your Digital Cat
+                    </p>
+
+
+                    <button
+                        class="change-name-button"
+                        onclick="changePetName()">
+
+                        ✏️ Change Name
+
+                    </button>
+
+                </div>
+
+
+                <div class="my-pet-stats-card">
+
+                    <h2>
+                        Pet Status
+                    </h2>
+
+
+                    <div class="pet-level-box">
+
+                        <span>
+                            ⭐ Level
+                        </span>
+
+                        <strong id="petPageLevel">
+                            1
+                        </strong>
+
+                    </div>
+
+
+                    <div class="pet-stat">
+
+                        <div>
+
+                            <span>
+                                ⭐ EXP
+                            </span>
+
+                            <strong id="petPageExp">
+                                0 / 100
+                            </strong>
+
+                        </div>
+
+
+                        <div class="progress-bar">
+
+                            <div
+                                id="petPageExpBar"
+                                class="exp-fill">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="pet-stat">
+
+                        <div>
+
+                            <span>
+                                ❤️ Happiness
+                            </span>
+
+                            <strong id="petPageHappiness">
+                                0%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="progress-bar pink">
+
+                            <div
+                                id="petPageHappinessBar"
+                                class="happiness-fill">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="pet-stat">
+
+                        <div>
+
+                            <span>
+                                ⚡ Energy
+                            </span>
+
+                            <strong id="petPageEnergy">
+                                100%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="progress-bar purple">
+
+                            <div
+                                id="petPageEnergyBar"
+                                class="energy-fill">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="pet-stat">
+
+                        <div>
+
+                            <span>
+                                🍖 Hunger
+                            </span>
+
+                            <strong id="petPageHunger">
+                                0%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="progress-bar orange">
+
+                            <div
+                                id="petPageHungerBar"
+                                class="hunger-fill">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="pet-food-box">
+
+                        <span>
+                            🍖 Food
+                        </span>
+
+                        <strong id="petPageFood">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PET SHOP ================= -->
+
+        <section id="shop"
+            class="page">
+
+
+            <div class="page-header">
+
+                <h1>
+                    🛒 Pet Shop
+                </h1>
+
+                <p>
+                    Choose something delicious for your pet!
+                </p>
+
+            </div>
+
+
+            <div class="shop-grid">
+
+
+                <!-- MEAT -->
+
+                <div class="shop-card">
+
+                    <div class="shop-item-icon">
+                        🍖
+                    </div>
+
+                    <h2>
+                        Meat Snack
+                    </h2>
+
+                    <p>
+                        ลด Hunger และเพิ่ม Happiness
+                    </p>
+
+                    <div class="shop-price">
+                        0.01 tBNB
+                    </div>
+
+                    <button
+                        class="buy-item-button"
+                        onclick="buyShopItem(0)">
+
+                        🛒 Buy Now
+
+                    </button>
+
+                    <small>
+                        Owned:
+                        <span id="owned-0">0</span>
+                    </small>
+
+                </div>
+
+
+                <!-- MILK -->
+
+                <div class="shop-card">
+
+                    <div class="shop-item-icon">
+                        🥛
+                    </div>
+
+                    <h2>
+                        Milk Bottle
+                    </h2>
+
+                    <p>
+                        เพิ่ม Energy ให้สัตว์เลี้ยง
+                    </p>
+
+                    <div class="shop-price">
+                        0.01 tBNB
+                    </div>
+
+                    <button
+                        class="buy-item-button"
+                        onclick="buyShopItem(1)">
+
+                        🛒 Buy Now
+
+                    </button>
+
+                    <small>
+                        Owned:
+                        <span id="owned-1">0</span>
+                    </small>
+
+                </div>
+
+
+                <!-- COOKIE -->
+
+                <div class="shop-card">
+
+                    <div class="shop-item-icon">
+                        🍪
+                    </div>
+
+                    <h2>
+                        Pet Cookie
+                    </h2>
+
+                    <p>
+                        ขนมแสนอร่อยเพิ่ม Happiness
+                    </p>
+
+                    <div class="shop-price">
+                        0.01 tBNB
+                    </div>
+
+                    <button
+                        class="buy-item-button"
+                        onclick="buyShopItem(2)">
+
+                        🛒 Buy Now
+
+                    </button>
+
+                    <small>
+                        Owned:
+                        <span id="owned-2">0</span>
+                    </small>
+
+                </div>
+
+
+                <!-- FISH -->
+
+                <div class="shop-card">
+
+                    <div class="shop-item-icon">
+                        🐟
+                    </div>
+
+                    <h2>
+                        Fish Treat
+                    </h2>
+
+                    <p>
+                        ลด Hunger และเพิ่ม Happiness
+                    </p>
+
+                    <div class="shop-price">
+                        0.02 tBNB
+                    </div>
+
+                    <button
+                        class="buy-item-button"
+                        onclick="buyShopItem(3)">
+
+                        🛒 Buy Now
+
+                    </button>
+
+                    <small>
+                        Owned:
+                        <span id="owned-3">0</span>
+                    </small>
+
+                </div>
+
+
+                <!-- CUPCAKE -->
+
+                <div class="shop-card">
+
+                    <div class="shop-item-icon">
+                        🧁
+                    </div>
+
+                    <h2>
+                        Cute Cupcake
+                    </h2>
+
+                    <p>
+                        เพิ่ม Happiness อย่างมาก
+                    </p>
+
+                    <div class="shop-price">
+                        0.02 tBNB
+                    </div>
+
+                    <button
+                        class="buy-item-button"
+                        onclick="buyShopItem(4)">
+
+                        🛒 Buy Now
+
+                    </button>
+
+                    <small>
+                        Owned:
+                        <span id="owned-4">0</span>
+                    </small>
+
+                </div>
+
+
+                <!-- CAKE -->
+
+                <div class="shop-card">
+
+                    <div class="shop-item-icon">
+                        🍰
+                    </div>
+
+                    <h2>
+                        Pet Cake
+                    </h2>
+
+                    <p>
+                        ขนมพิเศษสำหรับสัตว์เลี้ยง
+                    </p>
+
+                    <div class="shop-price">
+                        0.03 tBNB
+                    </div>
+
+                    <button
+                        class="buy-item-button"
+                        onclick="buyShopItem(5)">
+
+                        🛒 Buy Now
+
+                    </button>
+
+                    <small>
+                        Owned:
+                        <span id="owned-5">0</span>
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div id="shopMessage"
+                class="shop-message">
+            </div>
+
+        </section>
+
+
+        <!-- ================= INVENTORY ================= -->
+
+        <section id="inventory"
+            class="page">
+
+
+            <div class="page-header">
+
+                <h1>
+                    🎒 Inventory
+                </h1>
+
+                <p>
+                    Your items
+                </p>
+
+            </div>
+
+
+            <div class="inventory-grid">
+
+
+                <!-- MEAT -->
+
+                <div class="inventory-item-card">
+
+                    <div class="inventory-item-icon">
+                        🍖
+                    </div>
+
+                    <div class="inventory-item-info">
+
+                        <h2>
+                            Meat Snack
+                        </h2>
+
+                        <p>
+                            Hunger -20
+                            <br>
+                            Happiness +10
+                        </p>
+
+                    </div>
+
+                    <div class="inventory-item-bottom">
+
+                        <strong>
+                            x<span id="inventory-0">0</span>
+                        </strong>
+
+                        <button
+                            class="use-item-button"
+                            onclick="useShopItem(0)">
+
+                            Use
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MILK -->
+
+                <div class="inventory-item-card">
+
+                    <div class="inventory-item-icon">
+                        🥛
+                    </div>
+
+                    <div class="inventory-item-info">
+
+                        <h2>
+                            Milk Bottle
+                        </h2>
+
+                        <p>
+                            Energy +25
+                        </p>
+
+                    </div>
+
+                    <div class="inventory-item-bottom">
+
+                        <strong>
+                            x<span id="inventory-1">0</span>
+                        </strong>
+
+                        <button
+                            class="use-item-button"
+                            onclick="useShopItem(1)">
+
+                            Use
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- COOKIE -->
+
+                <div class="inventory-item-card">
+
+                    <div class="inventory-item-icon">
+                        🍪
+                    </div>
+
+                    <div class="inventory-item-info">
+
+                        <h2>
+                            Pet Cookie
+                        </h2>
+
+                        <p>
+                            Happiness +20
+                        </p>
+
+                    </div>
+
+                    <div class="inventory-item-bottom">
+
+                        <strong>
+                            x<span id="inventory-2">0</span>
+                        </strong>
+
+                        <button
+                            class="use-item-button"
+                            onclick="useShopItem(2)">
+
+                            Use
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FISH -->
+
+                <div class="inventory-item-card">
+
+                    <div class="inventory-item-icon">
+                        🐟
+                    </div>
+
+                    <div class="inventory-item-info">
+
+                        <h2>
+                            Fish Treat
+                        </h2>
+
+                        <p>
+                            Hunger -30
+                            <br>
+                            Happiness +15
+                        </p>
+
+                    </div>
+
+                    <div class="inventory-item-bottom">
+
+                        <strong>
+                            x<span id="inventory-3">0</span>
+                        </strong>
+
+                        <button
+                            class="use-item-button"
+                            onclick="useShopItem(3)">
+
+                            Use
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CUPCAKE -->
+
+                <div class="inventory-item-card">
+
+                    <div class="inventory-item-icon">
+                        🧁
+                    </div>
+
+                    <div class="inventory-item-info">
+
+                        <h2>
+                            Cute Cupcake
+                        </h2>
+
+                        <p>
+                            Happiness +30
+                        </p>
+
+                    </div>
+
+                    <div class="inventory-item-bottom">
+
+                        <strong>
+                            x<span id="inventory-4">0</span>
+                        </strong>
+
+                        <button
+                            class="use-item-button"
+                            onclick="useShopItem(4)">
+
+                            Use
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CAKE -->
+
+                <div class="inventory-item-card">
+
+                    <div class="inventory-item-icon">
+                        🍰
+                    </div>
+
+                    <div class="inventory-item-info">
+
+                        <h2>
+                            Pet Cake
+                        </h2>
+
+                        <p>
+                            Happiness +40
+                            <br>
+                            Energy +10
+                        </p>
+
+                    </div>
+
+                    <div class="inventory-item-bottom">
+
+                        <strong>
+                            x<span id="inventory-5">0</span>
+                        </strong>
+
+                        <button
+                            class="use-item-button"
+                            onclick="useShopItem(5)">
+
+                            Use
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <div id="inventoryMessage"
+                class="inventory-message">
+            </div>
+
+
+        </section>
+
+
+        <!-- ================= WALLET ================= -->
+
+        <section id="wallet"
+            class="page">
+
+            <h1>
+                👛 Wallet
+            </h1>
+
+
+            <div class="wallet-card">
+
+                <div class="wallet-icon">
+                    🦊
+                </div>
+
+
+                <h2>
+                    MetaMask
+                </h2>
+
+
+                <p id="walletFullAddress">
+                    Not Connected
+                </p>
+
+
+                <span>
+                    BNB Smart Chain Testnet
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RANKING ================= -->
+
+        <section id="ranking"
+            class="page">
+
+            <div class="page-header">
+
+                <h1>
+                    🏆 Ranking
+                </h1>
+
+                <p>
+                    Top PETORA Players
+                </p>
+
+            </div>
+
+
+            <div class="ranking-card">
+
+                <div class="ranking-header">
+
+                    <h2>
+                        🏆 Leaderboard
+                    </h2>
+
+                    <span>
+                        Demo Ranking
+                    </span>
+
+                </div>
+
+
+                <div class="ranking-list">
+
+                    <!-- Ranking จะถูกสร้างด้วย JavaScript -->
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================= ETHERS ================= -->
+
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.5/dist/ethers.umd.min.js"></script>
+
+    <script src="game.js"></script>
+
+
+</body>
+
+</html>

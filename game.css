@@ -1,0 +1,2617 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: "Fredoka", sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 80% 10%,
+            #f8e8ff,
+            transparent 30%
+        ),
+        #fff8fc;
+
+    color: #714b6d;
+}
+
+
+/* ================= SIDEBAR ================= */
+
+.sidebar {
+    position: fixed;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 240px;
+
+    background: white;
+
+    border-right: 1px solid #f1dfec;
+
+    padding: 25px 18px;
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 10;
+}
+
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    font-size: 24px;
+
+    margin-bottom: 25px;
+
+    padding-left: 8px;
+}
+
+
+.sidebar-logo strong {
+    background:
+        linear-gradient(
+            90deg,
+            #e77db9,
+            #a66ee8
+        );
+
+    background-clip: text;
+
+    color: transparent;
+}
+
+
+.wallet-mini {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px 12px;
+
+    background: #fff4fb;
+
+    border-radius: 14px;
+
+    font-size: 13px;
+
+    color: #9b7894;
+
+    margin-bottom: 25px;
+}
+
+
+.sidebar nav {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.menu-item {
+    border: none;
+
+    background: transparent;
+
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border-radius: 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    font-family: "Fredoka", sans-serif;
+
+    font-size: 16px;
+
+    color: #97758f;
+
+    cursor: pointer;
+
+    text-align: left;
+}
+
+
+.menu-item:hover {
+    background: #fff2fa;
+}
+
+
+.menu-item.active {
+    background: #ffe8f6;
+
+    color: #b95796;
+
+    font-weight: 600;
+}
+
+
+.back-button {
+    margin-top: auto;
+
+    border: none;
+
+    background: #f9edf7;
+
+    color: #9a7292;
+
+    border-radius: 13px;
+
+    padding: 12px;
+
+    font-family: "Fredoka", sans-serif;
+
+    cursor: pointer;
+}
+
+
+/* ================= MAIN ================= */
+
+.main-content {
+    margin-left: 240px;
+
+    min-height: 100vh;
+
+    padding: 40px 50px;
+}
+
+
+.page {
+    display: none;
+}
+
+.active-page {
+    display: block;
+}
+
+
+/* TOPBAR */
+
+.topbar {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+
+.small-title {
+    color: #b793ae;
+
+    font-size: 14px;
+
+    margin-bottom: 3px;
+}
+
+
+.topbar h1 {
+    font-size: 32px;
+}
+
+
+.top-pet {
+    background: white;
+
+    border: 1px solid #f0ddea;
+
+    border-radius: 30px;
+
+    padding: 10px 18px;
+
+    display: flex;
+
+    gap: 8px;
+
+    align-items: center;
+}
+
+
+/* ================= PET CARD ================= */
+
+.pet-main-card {
+    background: white;
+
+    border-radius: 28px;
+
+    padding: 35px;
+
+    display: grid;
+
+    grid-template-columns: 45% 55%;
+
+    align-items: center;
+
+    box-shadow:
+        0 15px 40px rgba(170, 110, 160, 0.08);
+
+    border: 1px solid #f5e5f1;
+
+    margin-bottom: 25px;
+}
+
+
+.pet-display {
+    display: flex;
+
+    justify-content: center;
+}
+
+
+.pet-image-box {
+    width: 270px;
+    height: 270px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #fff,
+            #ffeaf7
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.pet-image-box img {
+    width: 220px;
+    height: 220px;
+
+    object-fit: contain;
+}
+
+
+.pet-emoji {
+    font-size: 130px;
+}
+
+
+.pet-info {
+    padding: 20px;
+}
+
+
+.pet-info > p {
+    color: #b18ba8;
+
+    margin-bottom: 4px;
+}
+
+
+.pet-info h2 {
+    font-size: 36px;
+
+    color: #714b6d;
+
+    margin-bottom: 20px;
+}
+
+
+/* LEVEL */
+
+.level-row {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 10px;
+}
+
+.level-row span {
+    color: #a5879e;
+}
+
+.level-number {
+    background: #ffe7f4;
+
+    color: #c25d9b;
+
+    padding: 4px 11px;
+
+    border-radius: 10px;
+}
+
+
+/* EXP */
+
+.exp-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 7px;
+
+    color: #a4879e;
+}
+
+.exp-text {
+    color: #c167a1;
+}
+
+
+.progress-bar {
+    width: 100%;
+
+    height: 10px;
+
+    background: #f2e9f0;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+
+.exp-fill {
+    height: 100%;
+
+    width: 0%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ed83bc,
+            #a877e7
+        );
+
+    border-radius: 20px;
+
+    transition: width 0.3s;
+}
+
+
+/* ACTION */
+
+.action-buttons {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+
+.action-button {
+    flex: 1;
+
+    border: none;
+
+    border-radius: 14px;
+
+    padding: 13px 8px;
+
+    font-family: "Fredoka", sans-serif;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.action-button:hover {
+    transform: translateY(-2px);
+}
+
+
+.feed {
+    background: #fff0e8;
+
+    color: #c77955;
+}
+
+
+.play {
+    background: #eee8ff;
+
+    color: #8769c6;
+}
+
+
+.rest {
+    background: #e8f8ff;
+
+    color: #5599b7;
+}
+
+
+/* ================= STATUS ================= */
+
+.status-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+
+.status-card {
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 20px;
+
+    border: 1px solid #f3e4ef;
+}
+
+
+.status-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 12px;
+
+    color: #92748b;
+}
+
+
+.status-top strong {
+    color: #74506e;
+}
+
+
+.pink .happiness-fill,
+.happiness-fill {
+    height: 100%;
+
+    width: 0%;
+
+    background: #e982bb;
+
+    border-radius: 20px;
+
+    transition: width 0.3s;
+}
+
+
+.purple .energy-fill,
+.energy-fill {
+    height: 100%;
+
+    width: 100%;
+
+    background: #9b7be2;
+
+    border-radius: 20px;
+
+    transition: width 0.3s;
+}
+
+
+.orange .hunger-fill,
+.hunger-fill {
+    height: 100%;
+
+    width: 0%;
+
+    background: #edaa68;
+
+    border-radius: 20px;
+
+    transition: width 0.3s;
+}
+
+
+/* ================= QUICK ================= */
+
+.section-title {
+    margin: 30px 0 15px;
+
+    font-size: 22px;
+}
+
+
+.quick-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+
+.quick-card {
+    border: 1px solid #f1e0ec;
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 22px;
+
+    text-align: left;
+
+    font-family: "Fredoka", sans-serif;
+
+    cursor: pointer;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.quick-card span {
+    font-size: 30px;
+}
+
+
+.quick-card strong {
+    color: #785471;
+
+    font-size: 17px;
+}
+
+
+.quick-card small {
+    color: #b292aa;
+}
+
+
+/* ================= OTHER PAGES ================= */
+
+.page h1 {
+    font-size: 32px;
+
+    margin-bottom: 8px;
+}
+
+
+.page-description {
+    color: #a5889e;
+
+    margin-bottom: 30px;
+}
+
+
+.simple-card,
+.ranking-card {
+    background: white;
+
+    border-radius: 25px;
+
+    padding: 40px;
+
+    text-align: center;
+
+    border: 1px solid #f2e2ed;
+}
+
+
+.big-pet img {
+    width: 250px;
+
+    margin-bottom: 20px;
+}
+
+
+.simple-card h2 {
+    margin-bottom: 8px;
+}
+
+
+.simple-card p,
+.ranking-card p {
+    color: #a88aa1;
+}
+
+
+/* SHOP */
+
+.shop-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 320px));
+
+    gap: 20px;
+}
+
+
+.shop-card {
+    background: white;
+
+    border-radius: 25px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    border: 1px solid #f1e1ed;
+}
+
+
+.shop-icon {
+    font-size: 65px;
+
+    margin-bottom: 10px;
+}
+
+
+.shop-card p {
+    color: #a58a9f;
+
+    margin: 8px 0;
+}
+
+
+.price {
+    font-size: 22px;
+
+    font-weight: 600;
+
+    color: #bd619f;
+
+    margin: 20px 0;
+}
+
+
+.buy-button {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ed82bb,
+            #a978e5
+        );
+
+    color: white;
+
+    font-family: "Fredoka", sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.buy-button:disabled {
+    opacity: 0.5;
+
+    cursor: not-allowed;
+}
+
+
+.shop-message {
+    min-height: 25px;
+
+    font-size: 13px;
+
+    margin-top: 15px;
+}
+
+
+/* INVENTORY */
+
+.inventory-card {
+    background: white;
+
+    border: 1px solid #f0e1ec;
+
+    border-radius: 22px;
+
+    padding: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    max-width: 550px;
+}
+
+
+.inventory-icon {
+    font-size: 55px;
+}
+
+
+.inventory-card p {
+    color: #a58a9f;
+
+    margin-top: 4px;
+}
+
+
+.inventory-card > strong {
+    margin-left: auto;
+
+    font-size: 30px;
+
+    color: #c0619d;
+}
+
+
+/* WALLET */
+
+.wallet-card {
+    background: white;
+
+    border-radius: 25px;
+
+    border: 1px solid #f0e1ec;
+
+    padding: 35px;
+
+    max-width: 550px;
+
+    text-align: center;
+}
+
+
+.wallet-icon {
+    font-size: 65px;
+
+    margin-bottom: 10px;
+}
+
+
+.wallet-card p {
+    margin: 15px 0;
+
+    word-break: break-all;
+
+    color: #85617e;
+}
+
+
+.wallet-card span {
+    background: #f8edf6;
+
+    padding: 8px 14px;
+
+    border-radius: 20px;
+
+    color: #a27798;
+
+    font-size: 13px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1000px) {
+
+    .sidebar {
+        width: 190px;
+    }
+
+    .main-content {
+        margin-left: 190px;
+
+        padding: 30px;
+    }
+
+    .pet-main-card {
+        grid-template-columns: 1fr;
+    }
+
+    .pet-info {
+        padding: 20px 0 0;
+    }
+}
+
+
+@media (max-width: 750px) {
+
+    .sidebar {
+        position: static;
+
+        width: 100%;
+
+        height: auto;
+
+        border-right: none;
+
+        border-bottom: 1px solid #f1dfec;
+    }
+
+    .sidebar nav {
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .back-button {
+        margin-top: 15px;
+    }
+
+    .main-content {
+        margin-left: 0;
+
+        padding: 25px 18px;
+    }
+
+    .status-grid,
+    .quick-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .pet-image-box {
+        width: 220px;
+        height: 220px;
+    }
+
+    .pet-image-box img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .topbar {
+        align-items: flex-start;
+
+        gap: 15px;
+
+        flex-direction: column;
+    }
+}
+/* =========================================
+   MY PET PAGE
+========================================= */
+
+.my-pet-layout {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1.3fr;
+
+    gap: 24px;
+
+    margin-top: 24px;
+
+}
+
+
+.my-pet-image-card,
+.my-pet-stats-card {
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border-radius: 24px;
+
+    padding: 28px;
+
+    box-shadow:
+        0 10px 30px rgba(100, 70, 130, 0.08);
+
+}
+
+
+.my-pet-image-card {
+
+    text-align: center;
+
+}
+
+
+.my-pet-image-box {
+
+    width: 220px;
+
+    height: 220px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffe5f1,
+            #eee5ff
+        );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+}
+
+
+.my-pet-image-box img {
+
+    width: 85%;
+
+    height: 85%;
+
+    object-fit: contain;
+
+}
+
+
+.my-pet-image-card h2 {
+
+    margin: 8px 0;
+
+}
+
+
+.my-pet-image-card p {
+
+    color: #888;
+
+    margin-bottom: 20px;
+
+}
+
+
+.change-name-button {
+
+    border: none;
+
+    border-radius: 14px;
+
+    padding: 11px 20px;
+
+    background: #f3e7ff;
+
+    color: #7047a8;
+
+    font-family: "Fredoka", sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+}
+
+
+.change-name-button:hover {
+
+    transform: translateY(-2px);
+
+}
+
+
+.my-pet-stats-card h2 {
+
+    margin-top: 0;
+
+    margin-bottom: 20px;
+
+}
+
+
+.pet-level-box {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background: #fff4fa;
+
+    border-radius: 16px;
+
+    padding: 16px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.pet-level-box strong {
+
+    font-size: 24px;
+
+    color: #a64d8d;
+
+}
+
+
+.pet-stat {
+
+    margin-bottom: 20px;
+
+}
+
+
+.pet-stat > div:first-child {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+
+}
+
+
+.pet-stat strong {
+
+    font-size: 14px;
+
+}
+
+
+.pet-food-box {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background: #fff7e8;
+
+    border-radius: 16px;
+
+    padding: 16px;
+
+    margin-top: 8px;
+
+}
+
+
+.pet-food-box strong {
+
+    font-size: 22px;
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 800px) {
+
+    .my-pet-layout {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .my-pet-image-box {
+
+        width: 180px;
+
+        height: 180px;
+
+    }
+
+}
+/* ================= PET SHOP ================= */
+
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 25px;
+}
+
+.shop-card {
+    background: rgba(255, 255, 255, 0.94);
+    border-radius: 24px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(100, 70, 130, 0.08);
+    transition: 0.2s;
+}
+
+.shop-card:hover {
+    transform: translateY(-5px);
+}
+
+.shop-item-icon {
+    width: 105px;
+    height: 105px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ffe5f1, #eee5ff);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 58px;
+}
+
+.shop-card h2 {
+    margin: 8px 0;
+    color: #704f7d;
+    font-size: 20px;
+}
+
+.shop-card p {
+    min-height: 45px;
+    color: #888;
+    font-size: 14px;
+}
+
+.shop-price {
+    margin: 15px 0;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    color: #a64d8d;
+}
+
+.buy-item-button {
+    width: 100%;
+
+    border: none;
+    border-radius: 15px;
+
+    padding: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #ff9fc8,
+        #b993ff
+    );
+
+    color: white;
+
+    font-family: "Fredoka", sans-serif;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.buy-item-button:hover {
+    transform: translateY(-2px);
+}
+
+.buy-item-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.shop-card small {
+    display: block;
+
+    margin-top: 12px;
+
+    color: #888;
+}
+
+.shop-card small span {
+    color: #a64d8d;
+
+    font-weight: 700;
+}
+
+.shop-message {
+    margin-top: 20px;
+
+    text-align: center;
+
+    font-weight: 600;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1000px) {
+
+    .shop-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .shop-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* ================= INVENTORY ================= */
+
+.inventory-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 25px;
+}
+
+.inventory-item-card {
+    background: rgba(255,255,255,0.94);
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(100,70,130,0.08);
+    transition: 0.2s;
+}
+
+.inventory-item-card:hover {
+    transform: translateY(-5px);
+}
+
+.inventory-item-icon {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #ffe5f1,
+        #eee5ff
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 50px;
+}
+
+.inventory-item-info {
+    text-align: center;
+}
+
+.inventory-item-info h2 {
+    margin: 8px 0;
+    color: #704f7d;
+    font-size: 20px;
+}
+
+.inventory-item-info p {
+    min-height: 45px;
+    color: #888;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.inventory-item-bottom {
+    margin-top: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inventory-item-bottom strong {
+    font-size: 20px;
+    color: #a64d8d;
+}
+
+.use-item-button {
+    border: none;
+    border-radius: 13px;
+
+    padding: 10px 22px;
+
+    background: linear-gradient(
+        135deg,
+        #ff9fc8,
+        #b993ff
+    );
+
+    color: white;
+
+    font-family: "Fredoka", sans-serif;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.use-item-button:hover {
+    transform: translateY(-2px);
+}
+
+.use-item-button:disabled {
+    background: #ddd;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.inventory-message {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+
+/* ================= SHOP MESSAGE ================= */
+
+.shop-message {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+
+/* ================= SHOP ================= */
+
+.shop-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 25px;
+}
+
+.shop-card {
+    background: rgba(255,255,255,0.94);
+    border-radius: 24px;
+    padding: 25px;
+    text-align: center;
+
+    box-shadow: 0 10px 30px rgba(100,70,130,0.08);
+
+    transition: 0.2s;
+}
+
+.shop-card:hover {
+    transform: translateY(-5px);
+}
+
+.shop-item-icon {
+    width: 105px;
+    height: 105px;
+
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #ffe5f1,
+        #eee5ff
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 58px;
+}
+
+.shop-card h2 {
+    margin: 8px 0;
+    color: #704f7d;
+    font-size: 20px;
+}
+
+.shop-card p {
+    min-height: 45px;
+    color: #888;
+    font-size: 14px;
+}
+
+.shop-price {
+    margin: 15px 0;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    color: #a64d8d;
+}
+
+.buy-item-button {
+    width: 100%;
+
+    border: none;
+    border-radius: 15px;
+
+    padding: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #ff9fc8,
+        #b993ff
+    );
+
+    color: white;
+
+    font-family: "Fredoka", sans-serif;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.buy-item-button:hover {
+    transform: translateY(-2px);
+}
+
+.buy-item-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.shop-card small {
+    display: block;
+    margin-top: 12px;
+    color: #888;
+}
+
+.shop-card small span {
+    color: #a64d8d;
+    font-weight: 700;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1000px) {
+
+    .shop-grid,
+    .inventory-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .shop-grid,
+    .inventory-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* =========================
+   INTERACTIVE PET
+========================= */
+
+.pet-interactive {
+    position: relative;
+    display: inline-flex;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.2s ease;
+}
+
+.pet-interactive:hover {
+    transform: scale(1.04);
+}
+
+.pet-interactive:active {
+    transform: scale(0.92);
+}
+
+/* ขยับตัวเบา ๆ */
+.pet-interactive img {
+    animation: petBounce 2s ease-in-out infinite;
+}
+
+@keyframes petBounce {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-7px) rotate(1deg);
+    }
+}
+
+/* หัวใจลอย */
+.pet-heart {
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    font-size: 28px;
+    pointer-events: none;
+    animation: heartFloat 1s ease-out forwards;
+    z-index: 20;
+}
+
+@keyframes heartFloat {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, 0) scale(0.7);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -45px) scale(1.15);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -100px) scale(0.9);
+    }
+}
+
+/* ข้อความเวลาคลิก */
+.pet-message {
+    position: absolute;
+    left: 50%;
+    top: -15px;
+    transform: translateX(-50%);
+    background: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    color: #a64d8d;
+    font-weight: 600;
+    font-size: 14px;
+    white-space: nowrap;
+    box-shadow: 0 5px 15px rgba(100, 70, 130, 0.12);
+    animation: messagePop 1.2s ease forwards;
+    pointer-events: none;
+    z-index: 30;
+}
+
+@keyframes messagePop {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 10px) scale(0.8);
+    }
+
+    20% {
+        opacity: 1;
+        transform: translate(-50%, 0) scale(1);
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -15px) scale(0.95);
+    }
+}
+/* =========================================
+   PET MOOD ANIMATION
+========================================= */
+
+.pet-interactive {
+    position: relative;
+    display: inline-flex;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* ปกติ */
+.pet-interactive.mood-normal img {
+    animation: petIdle 2s ease-in-out infinite;
+}
+
+/* มีความสุข */
+.pet-interactive.mood-happy img {
+    animation: petHappy 1s ease-in-out infinite;
+}
+
+/* ดีใจมาก */
+.pet-interactive.mood-excited img {
+    animation: petExcited 0.7s ease-in-out infinite;
+}
+
+/* หิว */
+.pet-interactive.mood-hungry img {
+    animation: petHungry 0.8s ease-in-out infinite;
+}
+
+/* ง่วง */
+.pet-interactive.mood-tired img {
+    animation: petTired 3s ease-in-out infinite;
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes petIdle {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+@keyframes petHappy {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+}
+
+@keyframes petExcited {
+    0%, 100% {
+        transform: scale(1) translateY(0);
+    }
+
+    50% {
+        transform: scale(1.08) translateY(-10px);
+    }
+}
+
+@keyframes petHungry {
+    0%, 100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+@keyframes petTired {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(4px) rotate(-2deg);
+    }
+}
+/* ======================================================
+   PET MOOD EFFECTS
+   ====================================================== */
+
+/* NORMAL */
+.pet-interactive.mood-normal img {
+    animation: petNormal 2s ease-in-out infinite;
+}
+
+@keyframes petNormal {
+
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-7px) rotate(1deg);
+    }
+
+}
+
+
+/* HAPPY */
+.pet-interactive.mood-happy img {
+    animation: petHappy 1.2s ease-in-out infinite;
+}
+
+@keyframes petHappy {
+
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-12px) scale(1.03);
+    }
+
+}
+
+
+/* EXCITED */
+.pet-interactive.mood-excited img {
+    animation: petExcited 0.7s ease-in-out infinite;
+}
+
+@keyframes petExcited {
+
+    0%, 100% {
+        transform: translateY(0) scale(1) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-12px) scale(1.06) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-18px) scale(1.08) rotate(2deg);
+    }
+
+    75% {
+        transform: translateY(-12px) scale(1.06) rotate(-2deg);
+    }
+
+}
+
+
+/* HUNGRY */
+.pet-interactive.mood-hungry img {
+    animation: petHungry 0.8s ease-in-out infinite;
+}
+
+@keyframes petHungry {
+
+    0%, 100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-4px);
+    }
+
+    50% {
+        transform: translateX(4px);
+    }
+
+    75% {
+        transform: translateX(-4px);
+    }
+
+}
+
+
+/* TIRED */
+.pet-interactive.mood-tired img {
+    animation: petTired 3s ease-in-out infinite;
+}
+
+@keyframes petTired {
+
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(4px) rotate(-2deg);
+    }
+
+}
+
+
+/* ======================================================
+   PET MOOD GLOW
+   ====================================================== */
+
+/* Happy */
+
+.pet-interactive.mood-happy {
+    filter: drop-shadow(
+        0 8px 12px rgba(255, 160, 200, 0.25)
+    );
+}
+
+
+/* Excited */
+
+.pet-interactive.mood-excited {
+    filter: drop-shadow(
+        0 8px 18px rgba(255, 190, 90, 0.35)
+    );
+}
+
+
+/* Hungry */
+
+.pet-interactive.mood-hungry {
+    filter: drop-shadow(
+        0 8px 12px rgba(255, 170, 120, 0.25)
+    );
+}
+
+
+/* Tired */
+
+.pet-interactive.mood-tired {
+    filter: grayscale(0.15)
+            drop-shadow(
+                0 5px 10px rgba(120, 120, 150, 0.18)
+            );
+}
+
+
+/* Normal */
+
+.pet-interactive.mood-normal {
+    filter: none;
+}
+/* ======================================================
+   PET MOOD EMOJI
+   ====================================================== */
+
+.pet-image-box {
+    position: relative;
+}
+
+.pet-emoji {
+    position: absolute;
+    right: 5px;
+    top: 20px;
+
+    font-size: 42px;
+    line-height: 1;
+
+    opacity: 0;
+    transform: scale(0.6) rotate(-10deg);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* แสดงอีโมจิ */
+.pet-emoji.show {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+/* กระดุ๊กกระดิ๊กเบา ๆ */
+.pet-emoji.show {
+    animation: moodEmojiFloat 1.5s ease-in-out infinite;
+}
+
+@keyframes moodEmojiFloat {
+
+    0%, 100% {
+        transform: translateY(0) scale(1) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-6px) scale(1.05) rotate(5deg);
+    }
+
+}
+/* ======================================================
+   DEMO RANKING
+   ====================================================== */
+
+.ranking-card {
+
+    max-width: 850px;
+
+    margin: 30px auto;
+
+    padding: 28px;
+
+    border-radius: 24px;
+
+    background: rgba(255, 255, 255, 0.9);
+
+    box-shadow:
+        0 10px 30px rgba(120, 80, 150, 0.12);
+
+}
+
+
+.ranking-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+
+}
+
+
+.ranking-header h2 {
+
+    margin: 0;
+
+}
+
+
+.ranking-header span {
+
+    padding: 7px 14px;
+
+    border-radius: 20px;
+
+    background: #f4e8ff;
+
+    color: #8b5aa8;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+.ranking-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+}
+
+
+.ranking-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 16px 20px;
+
+    border-radius: 18px;
+
+    background: #faf7fc;
+
+    border: 1px solid #eee5f4;
+
+    transition: 0.2s ease;
+
+}
+
+
+.ranking-item:hover {
+
+    transform: translateY(-2px);
+
+}
+
+
+.ranking-item.current-player {
+
+    border: 2px solid #ff9bc5;
+
+    background: #fff0f7;
+
+}
+
+
+.ranking-rank {
+
+    width: 45px;
+
+    text-align: center;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+}
+
+
+.ranking-pet-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f0e7ff;
+
+    font-size: 25px;
+
+}
+
+
+.ranking-player-info {
+
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+}
+
+
+.ranking-player-info strong {
+
+    font-size: 17px;
+
+}
+
+
+.ranking-player-info span {
+
+    font-size: 13px;
+
+    color: #888;
+
+}
+
+
+.ranking-level {
+
+    min-width: 90px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-end;
+
+    gap: 4px;
+
+}
+
+
+.ranking-level strong {
+
+    font-size: 16px;
+
+}
+
+
+.ranking-level span {
+
+    font-size: 12px;
+
+    color: #888;
+
+}
+.ranking-pet-icon img {
+
+    width: 42px;
+    height: 42px;
+
+    object-fit: contain;
+
+}
+/* ======================================================
+   PETORA COIN MINI GAME
+====================================================== */
+
+#coinMiniGame {
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(35, 20, 55, 0.72);
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 99999;
+
+    padding: 20px;
+
+}
+
+
+#coinMiniGame.show {
+
+    display: flex;
+
+}
+
+
+.coin-game-box {
+
+    width: min(
+        760px,
+        95vw
+    );
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff8fc,
+            #f4eeff
+        );
+
+    border-radius: 28px;
+
+    padding: 24px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,0.3);
+
+}
+
+
+.coin-game-header {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    margin-bottom: 16px;
+
+}
+
+
+.coin-game-header h2 {
+
+    margin: 0;
+
+    color: #744b82;
+
+    font-size: 25px;
+
+}
+
+
+.coin-game-header p {
+
+    margin: 5px 0 0;
+
+    color: #999;
+
+    font-size: 14px;
+
+}
+
+
+.coin-game-close {
+
+    width: 40px;
+
+    height: 40px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #ffe5f0;
+
+    color: #a45b7d;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+}
+
+
+.coin-game-info {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    gap: 10px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.coin-game-info > div {
+
+    flex: 1;
+
+    padding: 10px;
+
+    text-align: center;
+
+    border-radius: 14px;
+
+    background: white;
+
+    color: #777;
+
+    font-size: 14px;
+
+    box-shadow:
+        0 4px 12px
+        rgba(120,80,150,0.08);
+
+}
+
+
+.coin-game-info strong {
+
+    color: #7c5790;
+
+    font-size: 17px;
+
+}
+
+
+/* GAME AREA */
+
+.coin-game-area {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 420px;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #dff5ff 0%,
+            #f4eaff 55%,
+            #ffe9f4 100%
+        );
+
+    border: 3px solid #ffffff;
+
+    box-shadow:
+        inset 0 0 30px
+        rgba(160,120,190,0.12);
+
+}
+
+
+/* ตกแต่งพื้นหลัง */
+
+.coin-game-area::before {
+
+    content: "☁️     ☁️          ☁️";
+
+    position: absolute;
+
+    top: 25px;
+
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    font-size: 30px;
+
+    opacity: 0.65;
+
+}
+
+
+/* PET */
+
+.coin-game-pet {
+    position: absolute;
+    left: 50%;
+    bottom: 12px;
+    width: 82px;
+    height: 82px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 10;
+
+    /* สำคัญ: เอา transition ออก */
+    transition: none;
+
+    will-change: left, transform;
+}
+
+.coin-game-pet img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    filter: drop-shadow(
+        0 5px 4px
+        rgba(80,50,100,0.15)
+    );
+
+    will-change: transform;
+}
+
+
+/* COIN */
+
+.falling-coin {
+    position: absolute;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+
+    z-index: 5;
+
+    /* ช่วยให้ browser เร่งการวาด */
+    will-change: transform;
+
+    transform: translate3d(0, 0, 0);
+}
+
+
+/* +5 EXP */
+
+.coin-get-text {
+
+    position: absolute;
+
+    transform:
+        translateX(-50%);
+
+    color: #ff9d24;
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+    pointer-events: none;
+
+    animation:
+        coinExpFloat
+        0.7s ease forwards;
+
+    z-index: 20;
+
+}
+
+
+@keyframes coinExpFloat {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, 10px)
+            scale(0.8);
+
+    }
+
+    30% {
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, -35px)
+            scale(1.1);
+
+    }
+
+}
+
+
+/* CONTROLS */
+
+.coin-game-controls {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    margin-top: 18px;
+
+}
+
+
+.coin-game-controls span {
+
+    color: #999;
+
+    font-size: 13px;
+
+}
+
+
+.move-button {
+
+    width: 65px;
+
+    height: 50px;
+
+    border: none;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffacd0,
+            #c9a7ff
+        );
+
+    color: white;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 12px
+        rgba(180,120,190,0.2);
+
+    transition:
+        0.15s ease;
+
+}
+
+
+.move-button:hover {
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+.move-button:active {
+
+    transform:
+        scale(0.92);
+
+}
+
+
+/* EXIT */
+
+.exit-game-button {
+
+    display: block;
+
+    margin:
+        16px auto 0;
+
+    padding:
+        10px 25px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: #eee8f2;
+
+    color: #777;
+
+    cursor: pointer;
+
+}
+
+
+.exit-game-button:hover {
+
+    background: #e5dbe9;
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .coin-game-box {
+
+        padding: 15px;
+
+    }
+
+
+    .coin-game-area {
+
+        height: 350px;
+
+    }
+
+
+    .coin-game-info {
+
+        gap: 5px;
+
+    }
+
+
+    .coin-game-info > div {
+
+        padding: 8px 4px;
+
+        font-size: 12px;
+
+    }
+
+
+    .coin-game-controls span {
+
+        font-size: 11px;
+
+    }
+
+}

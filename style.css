@@ -1,0 +1,616 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Fredoka", sans-serif;
+    background:
+        radial-gradient(circle at 15% 20%, #ffe8f5 0%, transparent 35%),
+        radial-gradient(circle at 85% 80%, #eee3ff 0%, transparent 35%),
+        linear-gradient(135deg, #fff8fc, #f8f1ff);
+
+    min-height: 100vh;
+    color: #714b6d;
+}
+
+
+/* ================= LANDING ================= */
+
+.landing-page {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 80px;
+
+    padding: 50px 8%;
+}
+
+
+/* LEFT */
+
+.landing-left {
+    width: 50%;
+    max-width: 560px;
+}
+
+
+/* LOGO */
+
+.landing-logo {
+    display: flex;
+    align-items: center;
+
+    font-size: 46px;
+    font-weight: 700;
+
+    margin-bottom: 8px;
+
+    letter-spacing: -2px;
+}
+
+.logo-cat {
+    font-size: 42px;
+    margin-right: 4px;
+}
+
+.logo-text,
+.logo-paw {
+    background: linear-gradient(
+        90deg,
+        #ec78b7,
+        #a66de8
+    );
+
+    background-clip: text;
+    color: transparent;
+}
+
+.logo-paw {
+    font-size: 40px;
+    margin: 0 2px;
+}
+
+
+.landing-subtitle {
+    color: #b583aa;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+
+.landing-left h1 {
+    font-size: 58px;
+    line-height: 1.05;
+    color: #744e70;
+
+    margin-bottom: 25px;
+}
+
+.landing-left h1 span {
+    color: #d77bb6;
+}
+
+
+.landing-description {
+    font-size: 18px;
+    line-height: 1.7;
+
+    color: #96718e;
+
+    margin-bottom: 30px;
+
+    max-width: 500px;
+}
+
+
+/* BUTTON */
+
+.landing-button {
+    width: 300px;
+
+    border: none;
+    border-radius: 50px;
+
+    padding: 16px 25px;
+
+    margin-bottom: 14px;
+
+    font-family: "Fredoka", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+
+.connect-button {
+    background: white;
+    color: #9c61a1;
+
+    border: 2px solid #edcce8;
+
+    box-shadow: 0 8px 25px rgba(160, 110, 160, 0.12);
+}
+
+.connect-button:hover {
+    transform: translateY(-2px);
+}
+
+
+.start-button {
+    background: linear-gradient(
+        90deg,
+        #ec82bd,
+        #a879e8
+    );
+
+    color: white;
+
+    box-shadow:
+        0 10px 25px rgba(194, 116, 190, 0.25);
+}
+
+.start-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+}
+
+
+.start-button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+
+.wallet-status {
+    margin-top: 8px;
+
+    font-size: 14px;
+
+    color: #a5839d;
+}
+
+
+/* ================= RIGHT ================= */
+
+.landing-right {
+    width: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+
+.cat-circle {
+    width: 430px;
+    height: 430px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            #fff,
+            #ffe8f6
+        );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+
+    box-shadow:
+        0 25px 70px rgba(196, 119, 184, 0.18);
+}
+
+
+.landing-cat {
+    width: 330px;
+    height: 330px;
+
+    object-fit: contain;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+.cat-glow {
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    border-radius: 50%;
+
+    background: #f8c8e8;
+
+    filter: blur(60px);
+
+    opacity: 0.5;
+}
+
+
+.floating-paw {
+    position: absolute;
+
+    font-size: 30px;
+
+    opacity: 0.7;
+}
+
+.paw-one {
+    top: 30px;
+    left: 20px;
+}
+
+.paw-two {
+    right: 10px;
+    top: 100px;
+}
+
+.paw-three {
+    bottom: 30px;
+    left: 20px;
+}
+
+
+/* ================= PET SELECTION ================= */
+
+.pet-selection {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(80, 48, 76, 0.35);
+
+    backdrop-filter: blur(5px);
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+
+    padding: 20px;
+}
+
+.pet-selection.show {
+    display: flex;
+}
+
+
+.pet-selection-box {
+    background: #fff;
+
+    width: 100%;
+    max-width: 650px;
+
+    border-radius: 30px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    box-shadow:
+        0 25px 80px rgba(80, 50, 80, 0.2);
+
+    position: relative;
+}
+
+
+.close-pet-selection {
+    position: absolute;
+
+    right: 20px;
+    top: 15px;
+
+    border: none;
+
+    background: none;
+
+    font-size: 32px;
+
+    color: #b58aad;
+
+    cursor: pointer;
+}
+
+
+.selection-icon {
+    font-size: 45px;
+
+    margin-bottom: 5px;
+}
+
+
+.pet-selection-box h2 {
+    font-size: 30px;
+
+    color: #714b6d;
+
+    margin-bottom: 5px;
+}
+
+
+.pet-selection-box > p {
+    color: #aa8aa3;
+
+    margin-bottom: 25px;
+}
+
+
+/* PET OPTIONS */
+
+.pet-options {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+
+.pet-option {
+    border: 2px solid #f0dcea;
+
+    background: #fffafd;
+
+    border-radius: 22px;
+
+    padding: 20px 10px;
+
+    cursor: pointer;
+
+    font-family: "Fredoka", sans-serif;
+
+    transition: 0.2s;
+}
+
+.pet-option:hover {
+    border-color: #d891c2;
+
+    transform: translateY(-3px);
+}
+
+.pet-option.selected {
+    border-color: #d87ab8;
+
+    background: #fff0f9;
+
+    box-shadow:
+        0 8px 20px rgba(210, 120, 180, 0.15);
+}
+
+
+.pet-option-icon {
+    font-size: 55px;
+
+    margin-bottom: 8px;
+}
+
+
+.pet-option h3 {
+    color: #7b5376;
+
+    margin-bottom: 3px;
+}
+
+.pet-option span {
+    color: #b894b0;
+
+    font-size: 14px;
+}
+
+
+/* PET NAME */
+
+.pet-name-box {
+    margin-top: 22px;
+
+    text-align: left;
+}
+
+.pet-name-box label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #8c5685;
+
+    font-weight: 600;
+}
+
+.pet-name-box input {
+    width: 100%;
+
+    padding: 13px 16px;
+
+    border: 2px solid #f1d9eb;
+
+    border-radius: 15px;
+
+    outline: none;
+
+    font-family: "Fredoka", sans-serif;
+
+    font-size: 16px;
+
+    color: #805878;
+
+    background: #fffafd;
+}
+
+.pet-name-box input:focus {
+    border-color: #d58abd;
+}
+
+
+/* CONFIRM */
+
+.confirm-pet {
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ec82bd,
+            #a879e8
+        );
+
+    color: white;
+
+    font-family: "Fredoka", sans-serif;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.confirm-pet:disabled {
+    opacity: 0.4;
+
+    cursor: not-allowed;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+    .landing-page {
+        flex-direction: column;
+
+        gap: 30px;
+
+        padding: 40px 25px;
+
+        text-align: center;
+    }
+
+    .landing-left,
+    .landing-right {
+        width: 100%;
+    }
+
+    .landing-left h1 {
+        font-size: 45px;
+    }
+
+    .landing-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .landing-logo {
+        justify-content: center;
+    }
+
+    .cat-circle {
+        width: 330px;
+        height: 330px;
+    }
+
+    .landing-cat {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .pet-options {
+        grid-template-columns: 1fr;
+    }
+
+    .pet-selection-box {
+        padding: 25px 20px;
+    }
+
+    .landing-button {
+        width: 100%;
+    }
+}
+/* ================= PET SELECTION IMAGE ================= */
+
+.pet-option-icon {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 12px;
+
+    border-radius: 24px;
+
+    background: linear-gradient(
+        135deg,
+        #ffe5f1,
+        #eee5ff
+    );
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    transition: 0.25s ease;
+}
+
+.pet-option-icon img {
+    width: 90%;
+    height: 90%;
+
+    object-fit: contain;
+
+    transition: 0.25s ease;
+}
+
+/* เวลาเอาเมาส์ไปชี้ */
+.pet-option:hover .pet-option-icon img {
+    transform: scale(1.08);
+}
+
+.pet-option:hover .pet-option-icon {
+    transform: translateY(-4px);
+}
+
+
+/* ตัวที่เลือก */
+
+.pet-option.selected .pet-option-icon {
+    border: 3px solid #ff8fbe;
+
+    box-shadow:
+        0 0 0 5px rgba(255, 143, 190, 0.15),
+        0 10px 25px rgba(190, 120, 190, 0.18);
+}
+
+.pet-option.selected .pet-option-icon img {
+    transform: scale(1.08);
+}
+
+.pet-option.selected {
+    transform: translateY(-5px);
+}

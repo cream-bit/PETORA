@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PETORA - Digital Pet Game</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= LANDING PAGE ================= -->
+
+    <main class="landing-page">
+
+        <div class="landing-left">
+
+            <div class="landing-logo">
+
+                <span class="logo-cat">🐱</span>
+
+                <span class="logo-text">PET</span>
+
+                <span class="logo-paw">🐾</span>
+
+                <span class="logo-text">RA</span>
+
+            </div>
+
+
+            <p class="landing-subtitle">
+                Digital Pet Game
+            </p>
+
+            <h1>
+                Raise Your Own<br>
+                <span>Digital Pet</span>
+            </h1>
+
+            <p class="landing-description">
+                เลี้ยงสัตว์ดิจิทัลของคุณ ดูแล ให้อาหาร
+                เล่น และเติบโตไปด้วยกัน
+            </p>
+
+
+            <!-- Connect Wallet -->
+
+            <button id="connectWallet" class="landing-button connect-button">
+                🦊 Connect Wallet
+            </button>
+
+
+            <!-- Start Game -->
+
+            <button id="startGameButton" class="landing-button start-button" disabled>
+                🐾 Start Game
+            </button>
+
+
+            <p id="walletStatus" class="wallet-status">
+                กรุณาเชื่อมต่อ MetaMask ก่อนเริ่มเกม
+            </p>
+
+        </div>
+
+
+        <div class="landing-right">
+
+            <div class="cat-circle">
+
+                <div class="cat-glow"></div>
+
+                <img src="cat.png"
+                    alt="PETORA Digital Cat"
+                    class="landing-cat">
+
+            </div>
+
+            <div class="floating-paw paw-one">🐾</div>
+            <div class="floating-paw paw-two">💗</div>
+            <div class="floating-paw paw-three">🐾</div>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= PET SELECTION ================= -->
+
+    <div id="petSelection" class="pet-selection">
+
+        <div class="pet-selection-box">
+
+            <button id="closePetSelection"
+                class="close-pet-selection">
+                ×
+            </button>
+
+            <div class="selection-icon">
+                🐾
+            </div>
+
+            <h2>
+                Choose Your Pet
+            </h2>
+
+            <p>
+                เลือกสัตว์เลี้ยงตัวแรกของคุณ
+            </p>
+
+
+            <div class="pet-options">
+
+                <!-- CAT -->
+                <button class="pet-option"
+                    data-pet="cat">
+
+                    <div class="pet-option-icon">
+                        <img src="cat.png"
+                            alt="Cat">
+                    </div>
+
+                    <h3>
+                        Mochi
+                    </h3>
+
+                    <span>
+                        Cat
+                    </span>
+
+                </button>
+
+
+                <!-- DOG -->
+                <button class="pet-option"
+                    data-pet="dog">
+
+                    <div class="pet-option-icon">
+                        <img src="dog.png"
+                            alt="Dog">
+                    </div>
+
+                    <h3>
+                        Cookie
+                    </h3>
+
+                    <span>
+                        Dog
+                    </span>
+
+                </button>
+
+
+                <!-- RABBIT -->
+                <button class="pet-option"
+                    data-pet="rabbit">
+
+                    <div class="pet-option-icon">
+                        <img src="rabbit.png"
+                            alt="Rabbit">
+                    </div>
+
+                    <h3>
+                        Momo
+                    </h3>
+
+                    <span>
+                        Rabbit
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <!-- Pet Name -->
+
+            <div class="pet-name-box">
+
+                <label for="petNameInput">
+                    ตั้งชื่อสัตว์เลี้ยง
+                </label>
+
+                <input
+                    type="text"
+                    id="petNameInput"
+                    placeholder="พิมพ์ชื่อที่ต้องการ..."
+                    maxlength="15">
+
+            </div>
+
+
+            <button id="confirmPet"
+                class="confirm-pet"
+                disabled>
+
+                🐾 เริ่มเกม
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Ethers -->
+
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.5/dist/ethers.umd.min.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
